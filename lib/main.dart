@@ -47,11 +47,11 @@ class _Hp2State extends State<Hp2> {
           SizedBox(
             height: 50.0,
           ),
-          buildTextField(),
+          buildTextField('username', false),
           SizedBox(
             height: 15.0,
           ),
-          buildTextFieldpass(),
+          buildTextField('password', true),
           SizedBox(
             height: 15.0,
           ),
@@ -94,32 +94,17 @@ class _Hp2State extends State<Hp2> {
   }
 }
 
-Widget buildTextField() {
+Widget buildTextField(String hinttxt, bool obscure) {
   return TextField(
+    obscureText: obscure,
     decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.2)),
-        hintText: 'username',
+        hintText: hinttxt,
         prefixIcon: Icon(Icons.person),
         fillColor: Colors.white,
         filled: true),
   );
 }
-
-Widget buildTextFieldpass() {
-  return TextField(
-    obscureText: true,
-    decoration: InputDecoration(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15.2),
-      ),
-      hintText: 'password',
-      prefixIcon: Icon(Icons.lock),
-      fillColor: Colors.white,
-      filled: true,
-    ),
-  );
-}
-
 Widget buildButtonContainer(){
       return Container(
         height: 50.0,
